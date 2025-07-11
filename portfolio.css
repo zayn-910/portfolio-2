@@ -6,7 +6,7 @@ body {
 
 }
 
-.navbar {
+.navigation {
     position: fixed;
     top: 0;
     width: 100%;
@@ -59,7 +59,7 @@ ul li a:hover {
 }
 
 
-.hero {
+#home {
     height: 90vh;
     position: relative;
     display: flex;
@@ -149,4 +149,3 @@ footer {
     display: flex;
     justify-content: center;
 }
-
