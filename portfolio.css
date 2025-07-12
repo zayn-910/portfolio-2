@@ -72,7 +72,7 @@ ul li a:hover {
 
 
 #home {
-    height: 90vh;
+    height: 95vh;
     position: relative;
     display: flex;
     align-items: center;
@@ -259,7 +259,7 @@ footer {
 
 .alignright {
     position: relative;
-    bottom: 25px;
+    bottom: 15px;
     left: 20px;
 }
 
