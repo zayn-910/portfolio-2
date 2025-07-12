@@ -132,6 +132,7 @@ ul li a:hover {
 .profile:hover {
     width: 220px;
     height: 220px;
+    border: none;
     transition-delay: 0.1s;
 }
 
