@@ -1,9 +1,12 @@
+html {
+    scroll-behavior: smooth;
+}
 body {
   margin: 0;
   font-family: 'Arial', sans-serif;
   background-color: #1a1a1a;
   color: #fff;
-
+  background: linear-gradient(135deg, #0d0d0d, #2a2a2a);
 }
 
 .navigation {
@@ -15,18 +18,21 @@ body {
     align-items: center;
     padding: 20px 50px;
     background-color: rgba(26, 26, 26, 0.8);
+    backdrop-filter: blur(10px);
     z-index: 1;
+
     
 }
 
 .btn {
-    padding: 8px;
+    padding: 10px;
     margin: 1px;
-    border: 1px solid rgba(26, 26, 26, 0.8);
+    
     border-radius: 8px;
 }
 
 .btn:hover {
+
     background-color: #00ffcc;
 }
 
@@ -34,7 +40,13 @@ body {
   font-size: 30px;
   font-weight: bold;
   text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 0 0 5px #00ffcc;
   
+}
+
+.logo:hover {
+    text-shadow: 0px 0px 10px #00ffcc;
 }
 
 
@@ -48,7 +60,7 @@ ul {
 
 ul li a {
     text-decoration: none;
-    color: gray;
+    color: whitesmoke;
     font-size: 20px;
     transition-duration: 0.3s;
 }
@@ -64,7 +76,6 @@ ul li a:hover {
     position: relative;
     display: flex;
     align-items: center;
-    background: linear-gradient(135deg, #0d0d0d, #2a2a2a);
 }
 
 
@@ -73,11 +84,10 @@ ul li a:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 1;
   position: relative;
 }
 
-#portfolio {
+.info {
     display: block;
     margin-left: 45vb;
     text-align: left;
@@ -116,13 +126,13 @@ ul li a:hover {
     width: 240px;
     border: 2px solid;
     border-radius: 50%;
-    transition-duration: 0.6s;
+    transition-duration: 0.4s;
 }
 
 .profile:hover {
     width: 220px;
     height: 220px;
-    transition-delay: 0.2s;
+    transition-delay: 0.1s;
 }
 
 .button {
@@ -145,7 +155,117 @@ ul li a:hover {
 }
 
 
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: start;
+}
+
+.para {
+    width: 40vb;
+    padding-right: 30px;
+    display: flex;
+    justify-content: center;
+}
+.lead {
+    letter-spacing: 0.5px;
+    word-spacing: 1px;
+    font-size: 20px;
+    text-shadow: 0 0 5px #00ffcc;
+    opacity: 0.8;
+}
+
 footer {
     display: flex;
     justify-content: center;
+    z-index: 1;
+}
+
+
+#portfolio {
+    height: 65vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+.box1 {
+
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 255, 204, 0.1);
+    border: 2px solid #00ffcc;
+    border-radius: 50%;
+    box-shadow: 0px 0px 15px #00ffcc, 0px 0px 30px #00ffcc inset;
+    margin: 20px;
+
+}
+
+.box1:hover {
+    box-shadow: 0px 0px 30px #00ffcc, 0px 0px 30px #00ffcc inset;
+}
+
+.skill {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 40px;
+}
+
+
+
+
+.images {
+
+    height: 120px;
+    width: 120px;
+    border-radius: 30%;
+    transition-duration: 0.1s;
+
+}
+
+
+.projects {
+    justify-content: center;
+    align-items: center;
+}
+
+.projects a {
+    display: block;
+    color: #00ffcc;
+    font-size: 30px;
+    text-decoration: none;
+    text-shadow: 0 0 10px #00ffcc;
+    padding: 15px;
+    margin: 15px;
+}
+
+.projects a:hover {
+    color: whitesmoke;
+    text-shadow: 1px 1px 15px #00ffcc;
+}
+
+
+.alignleft {
+    position: relative;
+    left: 120px;
+}
+
+.alignright {
+    position: relative;
+    bottom: 25px;
+    left: 20px;
+}
+
+#about {
+    height: 50vh;
+}
+
+#contact {
+    height: 20vh;
 }
