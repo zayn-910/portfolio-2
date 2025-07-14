@@ -270,3 +270,41 @@ footer {
 #contact {
     height: 20vh;
 }
+
+
+.logo-position {
+  position: absolute;
+    top: 28px;
+    right: 16px;
+    left: auto;
+    transform: none;
+    z-index: 1;
+}
+
+
+.image-container {
+  position: relative;
+  width: 120px;
+  height: 30px;
+}
+
+.image-container img {
+  position: absolute;
+  right: 150px;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.3s ease-in-out;
+}
+
+
+.hover-img {
+  opacity: 0;
+}
+
+.image-container:hover .hover-img {
+  opacity: 1;
+}
+
+.image-container:hover .default-img {
+  opacity: 0;
+}
