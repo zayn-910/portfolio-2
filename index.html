@@ -17,12 +17,14 @@
     </ul>
 
     <div class="logo-position">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="#" onclick="showName()">
           <div class="image-container">
             <img class="default-img" src="whoami (1).svg" alt="Logo" />
             <img class="hover-img" src="whoami.svg" alt="Hover Logo" />
           </div>
         </a>
+        <div class="name" style="display: none;"><a class="toggle" href="#" onclick="showSvg()" ><h1 class="logo">Zayn Malik</h1></a>
+        </div>
       </div>
   </nav>
 
@@ -97,5 +99,20 @@
   <footer>
     <p>&copy; My Portfolio 2025</p>
   </footer>
+
+  <script>
+    function showName() {
+      const imageContainer = document.querySelector('.image-container');
+      const nameElement = document.querySelector('.name');
+      imageContainer.style.display = 'none';
+      nameElement.style.display = 'block';
+    }
+    function showSvg() {
+      const imageContainer = document.querySelector('.image-container');
+      const nameElement = document.querySelector('.name');
+      imageContainer.style.display = 'block';
+      nameElement.style.display = 'none';
+    }
+    </script>
 </body>
 </html>
