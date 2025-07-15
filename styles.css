@@ -322,3 +322,15 @@ footer {
     from { width: 0 }
     to { width: 100% }
 }
+
+
+.name {
+    position: relative;
+    right: 110px;
+    bottom: 25px;
+}
+
+.name .toggle {
+    text-decoration: none;
+    color: #fff;
+}
