@@ -37,6 +37,7 @@ body {
 }
 
 .logo {
+  font-family: monospace, monospace;
   font-size: 30px;
   font-weight: bold;
   text-transform: uppercase;
@@ -333,4 +334,26 @@ footer {
 .name .toggle {
     text-decoration: none;
     color: #fff;
+}
+
+
+.scramble-text {
+    cursor: pointer;
+    display: inline-block;
+    user-select: none;
+  }
+
+  .scramble-text .char.unrevealed {
+    color: #000000;
+    transition: color 1.5s;
+  }
+
+  .scramble-text .char.revealed {
+    color: #000000;
+    transition: color 1.5s;
+  }
+
+.who {
+    font-family: monospace;
+    text-transform: uppercase;
 }
