@@ -32,7 +32,9 @@
   <section id="home">
     <div class="stage">
       <div class="info">
-      <h1>I'm a Pentester</h1>
+      <h1 class="who">I'm a <span id="scramble" class="scramble-text">Pentester</span>
+        
+      </h1>
       <p class="typewriter">I break things on purpose — so others can't do it by accident.</p>
       
       </div>
@@ -113,6 +115,91 @@
       imageContainer.style.display = 'block';
       nameElement.style.display = 'none';
     }
+    
+    (function(){
+    const element = document.getElementById('scramble');
+    const originalText = element.textContent;
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+[]{}|;:,.<>?';
+    let intervalId = null;
+    let revealedCount = 0;
+    const speed = 50; 
+    let isHovering = false; 
+
+
+    element.textContent = '';
+    const charSpans = [];
+    for(let char of originalText) {
+      const span = document.createElement('span');
+      span.textContent = char;
+      span.classList.add('char');
+      if(char === ' ') {
+        span.classList.add('revealed'); 
+      } else {
+        span.classList.add('unrevealed');
+      }
+      element.appendChild(span);
+      charSpans.push(span);
+    }
+
+    function randomChar() {
+      return characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+
+    function scramblingStep() {
+      for(let i = 0; i < charSpans.length; i++) {
+        if(i < revealedCount || charSpans[i].textContent === ' ') {
+          // show original char
+          charSpans[i].textContent = originalText[i];
+          charSpans[i].classList.add('revealed');
+          charSpans[i].classList.remove('unrevealed');
+        } else {
+          if(isHovering) {
+            charSpans[i].textContent = randomChar();
+            charSpans[i].classList.add('unrevealed');
+            charSpans[i].classList.remove('revealed');
+          } else {
+            charSpans[i].textContent = charSpans[i].textContent || randomChar();
+          }
+        }
+      }
+      revealedCount++;
+
+      if(revealedCount > originalText.length) {
+        clearInterval(intervalId);
+        intervalId = null;
+      }
+    }
+
+    function startScramble() {
+      if(intervalId) return; 
+      isHovering = true;
+      revealedCount = 0;
+      intervalId = setInterval(scramblingStep, speed);
+    }
+
+    function startReveal() {
+      isHovering = false;
+      if (intervalId) {
+        clearInterval(intervalId);
+      }
+      intervalId = setInterval(() => {
+        scramblingStep();
+        if (revealedCount > originalText.length) {
+          clearInterval(intervalId);
+          intervalId = null;
+        }
+      }, speed);
+    }
+
+    element.addEventListener('mouseenter', () => {
+      if(intervalId) clearInterval(intervalId);
+      startScramble();
+    });
+
+    element.addEventListener('mouseleave', () => {
+      startReveal();
+    });
+  })();
     </script>
 </body>
 </html>
